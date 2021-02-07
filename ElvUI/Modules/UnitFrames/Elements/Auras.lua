@@ -375,6 +375,12 @@ function UF:PostUpdateAura(unit, button)
 		else
 			button:SetBackdropBorderColor(unpack(E.media.unitframeBorderColor))
 		end
+		if button.dtype == 'Magic' then
+            button:SetBackdropBorderColor(0.5, 0.8, 1.0)
+		end
+		if button.dtype == '' then
+			button:SetBackdropBorderColor(1.0, 0.0, 0.0)
+        end
 	end
 
 	if button.needsUpdateCooldownPosition and (button.cd and button.cd.timer and button.cd.timer.text) then
